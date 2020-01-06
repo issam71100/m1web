@@ -7,7 +7,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -56,6 +56,21 @@
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/twig-pack" />
+      <path value="$PROJECT_DIR$/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/easycorp/easy-log-handler" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug-pack" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/profiler-pack" />
     </include_path>
   </component>
   <component name="ProjectId" id="1W0zDTgXuNBpbIW59wrS5I1qCYM" />
@@ -67,7 +82,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -91,7 +106,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578301181088</updated>
-      <workItem from="1578301183823" duration="5633000" />
+      <workItem from="1578301183823" duration="6772000" />
+      <workItem from="1578311211408" duration="341000" />
+      <workItem from="1578311568768" duration="9516000" />
     </task>
     <servers />
   </component>
@@ -107,9 +124,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="317" y="187" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578306424548" />
-    <state x="345" y="137" key="SettingsEditor" timestamp="1578309597984">
+    <state x="353" y="113" key="SettingsEditor" timestamp="1578311400804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="345" y="137" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578309597984" />
+    <state x="353" y="113" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578311400804" />
   </component>
 </project>
