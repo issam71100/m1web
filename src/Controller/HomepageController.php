@@ -26,7 +26,7 @@ class HomepageController extends AbstractController
 	{
 		/*
 		 * débogage avec le composant debug
-		 *  dump : affichage dans le barre de débogage
+		 *  dump : affichage dans la barre de débogage
 		 *  dd : dump and die
 		*/
 		//dd($request->server->get('HTTP_USER_AGENT'));
@@ -57,8 +57,6 @@ class HomepageController extends AbstractController
 		return $this->render('homepage/index.html.twig', [
 			'param' => $userAgent
 		]);
-
-
 	}
 
 	/*
@@ -94,7 +92,8 @@ class HomepageController extends AbstractController
 
 		return $this->render('homepage/twig.html.twig', [
 			'list' => $list,
-			'now' => new \DateTime()
+			'now' => new \DateTime(),
+			'price' => 50990.75
 		]);
 	}
 }

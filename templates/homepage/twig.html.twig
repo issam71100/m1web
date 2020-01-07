@@ -23,6 +23,38 @@
 {# filtre : utilisation d'une barre verticale #}
 {{ now | date('d/m/Y')  }}
 
+<p>Prix : {{ price | number_format(2, ',', ' ') }}€</p>
+
+{# dump : débogage #}
+{{ dump(list) }}
+
+{#
+	créer des liens entre les routes
+		url: lien absolu
+		path: lien relatif
+	cibler le nom unique de la route contenu dans l'annotation @Route(name="...")
+	si la route possède des variables d'URL, fournir la valeur des variables en second paramètre
+#}
+
+<p>
+	<a href="{{ url('homepage.hello', { firstname: 'toto', lastname: 'tutu' } ) }}">Bonjour toto tutu</a>
+</p>
+
+<p>
+	<a href="{{ url('homepage.index') }}">Page d'accueil</a>
+</p>
+
+{#
+	ressources externes : js, css, img, ...
+	toutes les ressources externes sont stockées dans le dossier public
+	la fonction asset cible le dossier public
+#}
+<img src="{{ asset('img/Perez_Alonso Photography_Chocolate_Mountains.jpg') }}" alt="">
+
+{# appel d'une fonction personnalisée contenue dans src/Twig/AppExtension #}
+{{ show_map() }}
+
+
 
 
 
