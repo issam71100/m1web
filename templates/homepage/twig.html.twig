@@ -1,0 +1,30 @@
+{# boucle for #}
+<ul>
+	{% for key, value in list %}
+		<li>{{ key ~ ' : ' ~ value  }}</li>
+	{% endfor %}
+</ul>
+
+{#
+	condition if
+	set : création de variable
+#}
+{% set greve = false %}
+
+{% if greve == false %}
+	<p>Classe complète</p>
+{% else %}
+	<p>Classe incomplète</p>
+{% endif %}
+
+{# condition ternaire #}
+{{ greve ? '<p>Classe incomplète</p>' : '<p>Classe complète</p>' }}
+
+{# filtre : utilisation d'une barre verticale #}
+{{ now | date('d/m/Y')  }}
+
+
+
+
+
+

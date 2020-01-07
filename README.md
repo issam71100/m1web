@@ -18,6 +18,12 @@
 
 `symfony console debug:router` : lister les routes
 
+`symfony console debug:twig` : lister les fonctions, filtres et variables globales de Twig
+
+### Commandes de création de modèles
+
+`symfony console make:twig-extension` : créer une extension Twig
+
 ## Principaux composants
 
 `composer require <COMPOSANT>` : installer un composant ou une dépendance
@@ -28,11 +34,17 @@
 
 `debug` : gérer le débogage
 
+`asset` : utiliser des ressources externes dans Twig
+
+`make` : créer des modèles de classes PHP
+
 ## Références
 
 Documentation : <https://symfony.com/doc/current/index.html>
 
 ## Plan de cours
+
+* Installation de Symfony CLI
 
 * Pré-requis à la création d'un projet Symfony
 
@@ -53,3 +65,13 @@ Documentation : <https://symfony.com/doc/current/index.html>
 	* Créer une route avec des annotations
 
 	* Créer une route avec un paramètre
+
+* Twig
+
+	* Principaux fonctions et filtres
+
+	* Créer une extension Twig
+
+	* Créer des variables globales
+
+	* Gérer la mise en page

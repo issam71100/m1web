@@ -80,6 +80,23 @@ class HomepageController extends AbstractController
 			'lastname' => $lastname
 		]);
 	}
+
+	/**
+	 * @Route("/twig", name="homepage.twig")
+	 */
+	public function twig():Response
+	{
+		$list = [
+			'key0' => 'value0',
+			'key1' => 'value1',
+			'key2' => 'value2',
+		];
+
+		return $this->render('homepage/twig.html.twig', [
+			'list' => $list,
+			'now' => new \DateTime()
+		]);
+	}
 }
 
 
