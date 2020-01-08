@@ -2,13 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93b0d9c1-2860-4318-9b12-6d7bcc0c0785" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/team/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/team/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/team/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/TeamController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/team/details.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/team/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/assets.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/prod/webpack_encore.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/test/webpack_encore.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/webpack_encore.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/_inc/nav.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sfy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sfy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Twig/AppExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/AppExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/homepage/twig.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage/twig.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/team/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/team/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +98,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1W0zDTgXuNBpbIW59wrS5I1qCYM" />
@@ -98,7 +114,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -128,7 +145,7 @@
       <workItem from="1578394233212" duration="12174000" />
       <workItem from="1578464992162" duration="44000" />
       <workItem from="1578465051796" duration="3124000" />
-      <workItem from="1578469349734" duration="6085000" />
+      <workItem from="1578469349734" duration="18373000" />
     </task>
     <servers />
   </component>
@@ -143,6 +160,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="179" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1578309632219" />
+    <state x="765" y="206" key="#com.intellij.ide.util.MemberChooser" timestamp="1578480320003">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="206" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1578480320003" />
     <state x="632" y="225" key="FileChooserDialogImpl" timestamp="1578465167577">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -151,9 +172,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="317" y="187" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578470915728" />
-    <state x="353" y="113" key="SettingsEditor" timestamp="1578471652313">
+    <state x="353" y="113" key="SettingsEditor" timestamp="1578479764164">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="353" y="113" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578471652313" />
+    <state x="353" y="113" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578479764164" />
   </component>
 </project>

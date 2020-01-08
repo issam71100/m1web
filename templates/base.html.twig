@@ -3,10 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        {#
+            importer le CSS compilé par webpack(composant encore)
+            app : le nom de l'entrée est contenue dans webpack.config.js : addEntry(...)
+        #}
+        {{ encore_entry_link_tags('app') }}
+
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {#
+            mise en page:
+                les templates parents sont stockés à la racine du dossier templates
+                les templates enfants sont stockés dans des dossiers du dossier templates
+            principales instructions de mise en page
+                extends: héritage entre deux templates
+                block: zone vide à remplir ou pas dans un template enfant
+                include: inclusion de template twig
+        #}
+        {% include '_inc/nav.html.twig' %}
+
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+
+        {#
+            importer le JS compilé par webpack(composant encore)
+            app : le nom de l'entrée est contenue dans webpack.config.js : addEntry(...)
+        #}
+        {{ encore_entry_script_tags('app') }}
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>

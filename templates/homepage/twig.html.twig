@@ -52,7 +52,17 @@
 <img src="{{ asset('img/Perez_Alonso Photography_Chocolate_Mountains.jpg') }}" alt="">
 
 {# appel d'une fonction personnalisée contenue dans src/Twig/AppExtension #}
-{{ show_map() }}
+{{ show_map( { lat: 48, long: 2, zoom: 9 } ) }}
+{{ show_map( { lat: 48, long: 80, zoom: 7 } ) }}
+
+{# appel d'un filtre personnalisé #}
+<p>{{ '0123456789' | phone_intl_format }}</p>
+
+{# afficher des variables globales #}
+<p>Google Analytics : {{ code_GA }}</p>
+
+
+
 
 
 
