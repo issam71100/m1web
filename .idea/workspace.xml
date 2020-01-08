@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93b0d9c1-2860-4318-9b12-6d7bcc0c0785" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/img/team/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/team/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/team/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/TeamController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/team/details.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/team/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Twig/AppExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/AppExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/homepage/twig.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage/twig.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,15 +86,19 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1W0zDTgXuNBpbIW59wrS5I1qCYM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -121,11 +128,15 @@
       <workItem from="1578394233212" duration="12174000" />
       <workItem from="1578464992162" duration="44000" />
       <workItem from="1578465051796" duration="3124000" />
+      <workItem from="1578469349734" duration="6085000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Notifications" timestamp="1578309632219">
@@ -136,13 +147,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="632" y="225" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578465167577" />
-    <state x="317" y="187" key="NewPhpFileDialog" timestamp="1578306424548">
+    <state x="317" y="187" key="NewPhpFileDialog" timestamp="1578470915728">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="317" y="187" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578306424548" />
-    <state x="353" y="113" key="SettingsEditor" timestamp="1578465490788">
+    <state x="317" y="187" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578470915728" />
+    <state x="353" y="113" key="SettingsEditor" timestamp="1578471652313">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="353" y="113" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578465490788" />
+    <state x="353" y="113" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578471652313" />
   </component>
 </project>

@@ -1,0 +1,20 @@
+<h1>Equipe</h1>
+
+{#{ dump(list) }#}
+
+{# list est envoyé par le contrôleur #}
+{% for member in list %}
+	<p>
+		{# l'utilisation des parenthèses crée un groupe #}
+		<a href="{{ url('team.details', { firstname: member.firstname, lastname: member.lastname } ) }}">
+			{{ (member.firstname ~ ' ' ~ member['lastname']) | title }}
+		</a>
+		{#<a href="#">{{ member.firstname }} {{ member['lastname'] }}</a>#}
+	</p>
+{% endfor %}
+
+
+
+
+
+

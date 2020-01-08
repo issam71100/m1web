@@ -1,0 +1,6 @@
+{# result est envoyé par le contrôleur #}
+<h1>{{ (result.firstname ~ ' ' ~ result.lastname) | title }}</h1>
+<p>
+	<a href="mailto:{{ result.email }}">{{ result.email }}</a>
+</p>
+<img src="{{ asset('img/team/' ~ result.photo) }}" alt="">
