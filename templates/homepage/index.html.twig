@@ -1,3 +1,4 @@
+{% extends 'base.html.twig' %}
 {#
 	liste des balises twig
 		{# commentaire # }
@@ -9,5 +10,7 @@
 	afficher les données envoyées par le contrôleur :
 		récupération de la clé envoyée par render
 #}
-<mark>{{ param }}</mark>
+{% block body %}
+	<mark>{{ param }}</mark>
+{% endblock %}
 
