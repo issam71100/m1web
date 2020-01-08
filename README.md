@@ -38,6 +38,8 @@
 
 `make` : créer des modèles de classes PHP
 
+`encore` : utiliser webpack pour gérer les fichiers JS et CSS
+
 ## Références
 
 Documentation : <https://symfony.com/doc/current/index.html>
@@ -75,3 +77,9 @@ Documentation : <https://symfony.com/doc/current/index.html>
 	* Créer des variables globales
 
 	* Gérer la mise en page
+
+* Gérer les fichiers JS et CSS
+
+	* Utilisation du composant Encore
+
+	* Installation de Bootstrap et jQuery
