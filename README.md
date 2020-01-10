@@ -24,6 +24,8 @@
 
 `symfony console make:twig-extension` : créer une extension Twig
 
+`symfony console make:form` : créer une classe de formulaire
+
 ## Principaux composants
 
 `composer require <COMPOSANT>` : installer un composant ou une dépendance
@@ -40,9 +42,19 @@
 
 `encore` : utiliser webpack pour gérer les fichiers JS et CSS
 
+`form` : créer des formulaires
+
+`validator` : créer des contraintes de validation sur les champs de formulaires
+
+`mailer` : gérer les emails
+
 ## Références
 
 Documentation : <https://symfony.com/doc/current/index.html>
+
+Champs de formulaire : <https://symfony.com/doc/current/reference/forms/types.html>
+
+Contraintes de validation sur les champs de formulaire  : <https://symfony.com/doc/current/reference/constraints.html>
 
 ## Plan de cours
 
@@ -83,3 +95,21 @@ Documentation : <https://symfony.com/doc/current/index.html>
 	* Utilisation du composant Encore
 
 	* Installation de Bootstrap et jQuery
+
+* Gérer les formulaires
+
+	* Créer une classe de formulaire
+
+	* Gérer les champs de formulaire
+
+	* Gérer les contraintes de validation des champs de formulaire
+
+	* Gérer un formulaire dans un contrôleur
+
+	* Fonctions Twig liées aux formulaires
+
+* Gérer les emails
+
+	* Utilisation du composant Mailer
+
+	* Créer un email au format texte et HTML
