@@ -28,7 +28,14 @@
 			{{ form_start(form) }}
 				<p>
 					{{ form_label(form.firstname, 'Prénom:') }}
-					{{ form_widget(form.firstname) }}
+					{{ form_widget(form.firstname,
+						{ attr:
+							{
+								placeholder: 'Saisissez votre prénom',
+								autofocus: 'autofocus'
+							}
+						}
+					) }}
 				</p>
 				<p>
 					{{ form_label(form.lastname, 'Nom:') }}
