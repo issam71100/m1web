@@ -16,11 +16,31 @@
 
 				la variable form est envoyée par le contrôleur
 				le nom des champs de saisie est défini dans la classe de formulaire (src/Form/ContactType)
+
+				il est nécessaire de créer le bouton de validation du formulaire
+
+				pour appliquer le thème bootstrap à tous les formulaires
+					ajouter la clé form_themes dans config/packages/twig.yaml
 			#}
 			{{ form_start(form) }}
 				<p>
 					{{ form_label(form.firstname, 'Prénom:') }}
 					{{ form_widget(form.firstname) }}
+				</p>
+				<p>
+					{{ form_label(form.lastname, 'Nom:') }}
+					{{ form_widget(form.lastname) }}
+				</p>
+				<p>
+					{{ form_label(form.email, 'Email:') }}
+					{{ form_widget(form.email) }}
+				</p>
+				<p>
+					{{ form_label(form.message, 'Message:') }}
+					{{ form_widget(form.message) }}
+				</p>
+				<p>
+					<input type="submit" value="Valider">
 				</p>
 			{{ form_end(form) }}
 		</div>
