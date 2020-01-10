@@ -4,7 +4,31 @@
 	<div class="row">
 		<div class="col">
 			<h1>Contact</h1>
-			{{ form(form) }}
+			{#
+				fonctions twig de formulaire
+					form_start: crée la balise <form>
+					form_end: ferme la balise <form>
+					form_label: crée un intitulé de champ de saisie, <label>
+						nom du champ défini dans la classe de formulaire (src/Form/ContactType)
+						texte de l'intitulé
+					form_widget: crée le champ de saisie
+						nom du champ défini dans la classe de formulaire (src/Form/ContactType)
+
+				la variable form est envoyée par le contrôleur
+				le nom des champs de saisie est défini dans la classe de formulaire (src/Form/ContactType)
+			#}
+			{{ form_start(form) }}
+				<p>
+					{{ form_label(form.firstname, 'Prénom:') }}
+					{{ form_widget(form.firstname) }}
+				</p>
+			{{ form_end(form) }}
 		</div>
 	</div>
 {%  endblock %}
+
+
+
+
+
+
