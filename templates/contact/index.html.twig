@@ -21,6 +21,9 @@
 
 				pour appliquer le thème bootstrap à tous les formulaires
 					ajouter la clé form_themes dans config/packages/twig.yaml
+
+				pour ajouter des attributs HTML aux champs de saisie,
+					utiliser le second paramètre de form_widget avec la clé attr (attributs)
 			#}
 			{{ form_start(form) }}
 				<p>
@@ -40,7 +43,7 @@
 					{{ form_widget(form.message) }}
 				</p>
 				<p>
-					<input type="submit" value="Valider">
+					<input type="submit" value="Valider" class="btn btn-primary">
 				</p>
 			{{ form_end(form) }}
 		</div>
