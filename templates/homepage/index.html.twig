@@ -11,6 +11,19 @@
 		récupération de la clé envoyée par render
 #}
 {% block body %}
-	<mark>{{ param }}</mark>
+	<div class="row">
+		<div class="col">
+			{#<mark>{{ param }}</mark>#}
+
+			{#
+				afficher les messages flash
+				app.flashes : permet d'accéder aux messages flash stockés en session
+				notice est la clé du message flash
+			#}
+			{% for notice in app.flashes('notice') %}
+				<p class="alert alert-success">{{ notice }}</p>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock %}
 

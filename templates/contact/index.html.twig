@@ -24,8 +24,10 @@
 
 				pour ajouter des attributs HTML aux champs de saisie,
 					utiliser le second paramètre de form_widget avec la clé attr (attributs)
+
+				désactiver la validation html, ajouter l'attribut novalidate sur la balise <form>
 			#}
-			{{ form_start(form) }}
+			{{ form_start(form, { attr: { novalidate: 'novalidate' } }) }}
 				<p>
 					{{ form_label(form.firstname, 'Prénom:') }}
 					{{ form_widget(form.firstname,
