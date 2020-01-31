@@ -9,11 +9,16 @@ namespace App\Form\Model;
  */
 class ContactFormModel
 {
-	// uniquement en php 7.4 : typage des propriétés
+	/* uniquement en php 7.4 : typage des propriétés
 	private ?string $firstname = null;
 	private ?string $lastname = null;
 	private ?string $email = null;
-	private ?string $message = null;
+	private ?string $message = null;*/
+
+	private $firstname = null;
+	private $lastname = null;
+	private $email = null;
+	private $message = null;
 
 	// getters / setters
 	public function setFirstName(?string $firstname):void { $this->firstname = $firstname; }
