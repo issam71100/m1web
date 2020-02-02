@@ -6,7 +6,7 @@ class NewslettersFormModel
 {
 	private $email = null;
 	private $list = [
-		'Nouveaux produits' => 'newProducts',
+		'Produits' => 'products',
 		'Actualités' => 'news',
 		'Quotidienne' => 'daily'
 	];
