@@ -26,6 +26,26 @@
 
 `symfony console make:form` : créer une classe de formulaire
 
+### Commandes liées à Doctrine
+
+`symfony console doctrine:database:create` : créer la base de données
+
+`symfony console doctrine:database:drop --force` : supprimer la base de données
+
+`symfony console make:entity` : créer/modifier une entité
+
+`symfony console make:entity --regenerate` : créer les accesseurs/mutateurs des nouvelles propriétés d'une entité
+
+`symfony console make:entity --regenerate --overwrite` : recréer tous les accesseurs/mutateurs d'une entité
+
+`symfony console make:migration` : créer les migrations de la base de données
+
+`symfony console doctrine:migrations:migrate` : exécuter les migrations
+
+`symfony console make:fixtures` : créer un modèle de données fictives
+
+`symfony console doctrine:fixtures:load` : charger les données fictives
+
 ## Principaux composants
 
 `composer require <COMPOSANT>` : installer un composant ou une dépendance
@@ -47,6 +67,14 @@
 `validator` : créer des contraintes de validation sur les champs de formulaires
 
 `mailer` : gérer les emails
+
+`orm` : utiliser l'ORM [Doctrine](https://www.doctrine-project.org/projects/orm.html)
+
+`ormfixtures` : gérer des données fictives avec Doctrine
+
+## Bibliothèques externes
+
+`faker` : <https://github.com/fzaninotto/Faker>
 
 ## Références
 
@@ -113,3 +141,19 @@ Contraintes de validation sur les champs de formulaire  : <https://symfony.com/d
 	* Utilisation du composant Mailer
 
 	* Créer un email au format texte et HTML
+
+* Doctrine
+
+	* Création et connexion à une base de donnnées
+
+	* Créer une entité
+
+	* Créer des contraintes sur les entités
+
+	* Créer et exécuter des migrations
+
+	* Créer des données fictives
+
+	* Méthodes de sélection par défaut des classes de dépôt
+
+	* Souscripteur d'événements Doctrine
