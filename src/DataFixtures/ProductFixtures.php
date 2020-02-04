@@ -20,7 +20,8 @@ class ProductFixtures extends Fixture
 		    $product->setName( $faker->sentence(3) );
 		    $product->setDescription( $faker->text(200) );
 		    $product->setPrice( $faker->randomFloat(2, 0.1, 999.99) );
-		    $product->setImage('default.jpg');
+		    //$product->setImage('default.jpg');
+		    $product->setImage( $faker->image('public/img/product', 800, 450, null, false) );
 
 		    // doctrine : méthode persist permet de créer un enregistrement (INSERT INTO)
 		    $manager->persist($product);
