@@ -8,11 +8,36 @@ namespace App\EventSubscriber\Entity;
  *
  */
 
+use App\Entity\Product;
 use Doctrine\Common\EventSubscriber;
+use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Events;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ProductEventSubscriber implements EventSubscriber
 {
+	/*
+	 * injecter un service dans un service non contrôleur
+	 *      créer une propriété
+	 *      créer un constructeur avec un paramètre réprésentant le service
+	 *      dans le constructeur, lier la propriété et le paramètre
+	 */
+	private $slugger;
+
+	public function __construct(SluggerInterface $slugger)
+	{
+		$this->slugger = $slugger;
+	}
+
+	public function prePersist(LifecycleEventArgs $event):void
+	{
+		// par défaut, les souscripteurs doctrine écoutent toutes les entités
+		if($event->getObject() instanceof Product){
+			$product = $event->getObject();
+			$product->setSlug( $this->slugger->slug($product->getName())->lower() );
+		}
+	}
+
 	/*
 	 * getSubscribedEvents doit retourner un array des événements à écouter
 	 * principaux événements:
@@ -21,12 +46,14 @@ class ProductEventSubscriber implements EventSubscriber
 	 *      - preUpdate / postUpdate : avant ou après la mise à jour d'une entité dans la table (UPDATE)
 	 *      - preRemove / postRemove : avant ou après la suppression d'une entité dans la table (DELETE)
 	 *
-	 * 
+	 * le nom des méthodes gérant les événements doivent reprendre strictement le nom de l'événement
+	 *
+	 * NE PAS OUBLIER de déclarer le souscripteur doctrine dans config/services.yaml
 	 */
 	public function getSubscribedEvents()
 	{
 		return [
-			Events::postPersist,
+			Events::prePersist,
 			//Events::postUpdate
 		];
 	}
