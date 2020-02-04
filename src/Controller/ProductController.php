@@ -40,9 +40,12 @@ class ProductController extends AbstractController
 	/**
 	 * @Route("/product/{id}", name="product.details")
 	 */
-	public function details(int $id):Response
+	public function details(int $id, ProductRepository $productRepository):Response
 	{
-		return $this->render('product/details.html.twig');
+		$product = $productRepository->find($id);
+		return $this->render('product/details.html.twig', [
+			'product' => $product
+		]);
 	}
 
 }

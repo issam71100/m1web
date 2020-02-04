@@ -6,6 +6,14 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
+ * @ORM\Table(
+ *     uniqueConstraints={
+ *          @ORM\UniqueConstraint(name="uniq_product_name", columns={ "name" })
+ *     },
+ *     indexes={
+ *          @ORM\Index(name="idx_product_slug", columns={ "slug" })
+ *     }
+ * )
  */
 class Product
 {
@@ -35,6 +43,11 @@ class Product
      * @ORM\Column(type="string", length=50)
      */
     private $image;
+
+    /**
+     * @ORM\Column(type="string", length=150)
+     */
+    private $slug;
 
     public function getId(): ?int
     {
@@ -85,6 +98,18 @@ class Product
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

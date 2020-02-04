@@ -13,7 +13,7 @@
 				<h3>{{ product.name }}</h3>
 				<p class="font-weight-bold">{{ product.price }}€</p>
 				<p>
-					<a href="#" class="btn btn-primary">Visualiser</a>
+					<a href="{{ url('product.details', { id: product.id }) }}" class="btn btn-primary">Visualiser</a>
 				</p>
 			</div>
 		{% endfor %}
