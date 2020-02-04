@@ -1,0 +1,32 @@
+<?php
+
+namespace App\DataFixtures;
+
+use App\Entity\Product;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\Persistence\ObjectManager;
+use Faker\Factory as Faker;
+
+class ProductFixtures extends Fixture
+{
+    public function load(ObjectManager $manager)
+    {
+    	$faker = Faker::create();
+
+    	// création de plusieurs produits
+	    for($i = 0; $i < 10; $i++) {
+	    	// instanciation d'une entité
+		    $product = new Product();
+		    $product->setName( $faker->sentence(3) );
+		    $product->setDescription( $faker->text(200) );
+		    $product->setPrice( $faker->randomFloat(2, 0.1, 999.99) );
+		    $product->setImage('default.jpg');
+
+		    // doctrine : méthode persist permet de créer un enregistrement (INSERT INTO)
+		    $manager->persist($product);
+	    }
+
+	    // doctrine : méthode flush permet d'exécuter les requêtes SQL (à exécuter une seule fois)
+        $manager->flush();
+    }
+}

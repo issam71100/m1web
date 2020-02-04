@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 class TeamController extends AbstractController
 {
 	// php 7.4 uniquement : typage des propriétés
-	private array $list = [
+	private $list = [
 		[ 'firstname' => 'jean', 'lastname' => 'claude', 'email' => 'jean@claude.com', 'photo' => '1.jpg' ],
 		[ 'firstname' => 'luc', 'lastname' => 'matthieu', 'email' => 'luc@matthieu.com', 'photo' => '2.jpg' ],
 		[ 'firstname' => 'rémi', 'lastname' => 'damien', 'email' => 'remi@damien.com', 'photo' => '3.jpg' ]
