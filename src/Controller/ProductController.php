@@ -38,8 +38,27 @@ class ProductController extends AbstractController
 	}
 
 	/**
-	 * @Route("/product/{id}", name="product.details")
+	 * @Route("/product/{slug}", name="product.details")
 	 */
+
+	public function details(string $slug, ProductRepository $productRepository):Response
+	{
+		/*
+		 * findOneBy nécessite une liste de conditions sur les propriétés de l'entité
+		 *      clé est l'une des propriétés de l'entité
+		 */
+		$product = $productRepository->findOneBy([
+			'slug' => $slug
+		]);
+
+		return $this->render('product/details.html.twig', [
+			'product' => $product
+		]);
+	}
+
+	/*
+	 * @Route("/product/{id}", name="product.details")
+
 	public function details(int $id, ProductRepository $productRepository):Response
 	{
 		$product = $productRepository->find($id);
@@ -47,6 +66,7 @@ class ProductController extends AbstractController
 			'product' => $product
 		]);
 	}
+	 */
 
 }
 

@@ -10,9 +10,11 @@
 
 `symfony new <DOSSIER>` : créer un nouveau projet Symfony
 
-`symfony console` : lister toutes les commandes
-
 `symfony serve` : lancer le serveur PHP
+
+`symfony console` : lister toutes les commandes d'un projet Symfony
+
+`symfony console cache:clear` : supprimer le cache d'un projet Symfony
 
 ### Commandes de référence
 
@@ -20,11 +22,15 @@
 
 `symfony console debug:twig` : lister les fonctions, filtres et variables globales de Twig
 
+`symfony console debug:container` : lister les services
+
 ### Commandes de création de modèles
 
 `symfony console make:twig-extension` : créer une extension Twig
 
 `symfony console make:form` : créer une classe de formulaire
+
+`symfony console make:subscriber` : créer une classe de souscripteur d'événements Symfony
 
 ### Commandes liées à Doctrine
 
@@ -70,7 +76,9 @@
 
 `orm` : utiliser l'ORM [Doctrine](https://www.doctrine-project.org/projects/orm.html)
 
-`ormfixtures` : gérer des données fictives avec Doctrine
+`ormfixtures` : créer des données fictives pour Doctrine
+
+`string` : gérer les chaînes de caractères
 
 ## Bibliothèques externes
 
@@ -157,3 +165,11 @@ Contraintes de validation sur les champs de formulaire  : <https://symfony.com/d
 	* Méthodes de sélection par défaut des classes de dépôt
 
 	* Souscripteur d'événements Doctrine
+
+* Création d'un espace d'administration
+
+	* Ajouter, modifier et supprimer une entité
+
+	* Gestion des fichiers
+
+	* Souscripteur d'événements de formulaire
