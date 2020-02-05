@@ -24,6 +24,13 @@ class ProductController extends AbstractController
 		]);
 	}
 
+	/**
+	 * @Route("/products/form", name="admin.product.form")
+	 */
+	public function form():Response
+	{
+		return $this->render('admin/product/form.html.twig');
+	}
 }
 
 
