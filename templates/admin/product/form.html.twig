@@ -8,7 +8,29 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			formulaire
+			{# form : variable envoyée par le contrôleur #}
+			{{ form_start(form, { attr: { novalidate: 'novalidate' } } ) }}
+				<p>
+					{# name provient de la classe de formulaire (ProductType) #}
+					{{ form_label(form.name, 'Nom:') }}
+					{{ form_widget(form.name) }}
+				</p>
+				<p>
+					{{ form_label(form.description, 'Description:') }}
+					{{ form_widget(form.description) }}
+				</p>
+				<p>
+					{{ form_label(form.price, 'Prix:') }}
+					{{ form_widget(form.price) }}
+				</p>
+				<p>
+					{{ form_label(form.image, 'Image:') }}
+					{{ form_widget(form.image) }}
+				</p>
+				<p>
+					<input type="submit" class="btn btn-info" value="Valider">
+				</p>
+			{{ form_end(form) }}
 		</div>
 	</div>
 {% endblock %}
