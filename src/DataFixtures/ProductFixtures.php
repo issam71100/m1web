@@ -14,7 +14,7 @@ class ProductFixtures extends Fixture
     	$faker = Faker::create();
 
     	// création de plusieurs produits
-	    for($i = 0; $i < 10; $i++) {
+	    for($i = 0; $i < 50; $i++) {
 	    	// instanciation d'une entité
 		    $product = new Product();
 		    $product->setName( $faker->sentence(3) );
