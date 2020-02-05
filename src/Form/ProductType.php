@@ -10,7 +10,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Positive;
 
 class ProductType extends AbstractType
 {
@@ -24,9 +26,34 @@ class ProductType extends AbstractType
 		            ])
 	            ]
             ])
-            ->add('description', TextareaType::class)
-            ->add('price', MoneyType::class)
-            ->add('image', FileType::class)
+            ->add('description', TextareaType::class, [
+	            'constraints' => [
+		            new NotBlank([
+                         'message' => "La description est obligatoire"
+                     ])
+                ]
+            ])
+            ->add('price', MoneyType::class, [
+	            'constraints' => [
+		            new NotBlank([
+                         'message' => "Le prix est obligatoire"
+                    ]),
+		            new Positive([
+		            	'message' => 'Le prix doit être positif'
+		            ])
+	            ]
+            ])
+            ->add('image', FileType::class, [
+	            'constraints' => [
+		            new NotBlank([
+                         'message' => "L'image est obligatoire"
+                    ]),
+		            new Image([
+		                'mimeTypes' => ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml'],
+			            'mimeTypesMessage' => "L'image n'est pas dans un format Web"
+		            ])
+	            ]
+            ])
             //->add('slug')
         ;
     }

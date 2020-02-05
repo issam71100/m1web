@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,7 +31,7 @@ class ProductController extends AbstractController
 	/**
 	 * @Route("/products/form", name="admin.product.form")
 	 */
-	public function form(Request $request):Response
+	public function form(Request $request, EntityManagerInterface $entityManager):Response
 	{
 		// affichage d'un formulaire
 		$type = ProductType::class;
@@ -40,7 +41,22 @@ class ProductController extends AbstractController
 
 		// si le formulaire est valide
 		if($form->isSubmitted() && $form->isValid()){
-			dd($model);
+			//dd($model);
+			/*
+			 * insertion dans une table
+			 * EntityManagerInterface permet d'exécuter UPDATE, DELETE, INSERT
+			 *   méthode persist permet un INSERT
+			 *   méthode flush permet d'exécuter les requêtes
+			 */
+			$entityManager->persist($model);
+			$entityManager->flush();
+
+			// message de confirmation
+			$message = "Le produit a été ajouté";
+			$this->addFlash('notice', $message);
+
+			// redirection
+			return $this->redirectToRoute('admin.product.index');
 		}
 
 		return $this->render('admin/product/form.html.twig', [
