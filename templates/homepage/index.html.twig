@@ -15,14 +15,8 @@
 		<div class="col">
 			{#<mark>{{ param }}</mark>#}
 
-			{#
-				afficher les messages flash
-				app.flashes : permet d'accéder aux messages flash stockés en session
-				notice est la clé du message flash
-			#}
-			{% for notice in app.flashes('notice') %}
-				<p class="alert alert-success">{{ notice }}</p>
-			{% endfor %}
+			{% include '_inc/flash.messages.html.twig' %}
+
 		</div>
 	</div>
 {% endblock %}
