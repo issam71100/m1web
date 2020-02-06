@@ -10,7 +10,7 @@
 		{% for product in results %}
 			<div class="col-sm-3">
 				<img src="{{ asset('img/product/' ~ product.image) }}" class="img-fluid" alt="">
-				<h3>{{ product.name }}</h3>
+				<h4>{{ product.name }}</h4>
 				<p class="font-weight-bold">{{ product.price }}€</p>
 				<p>
 					{#<a href="{{ url('product.details', { id: product.id }) }}" class="btn btn-primary">Visualiser</a>#}
@@ -19,6 +19,8 @@
 			</div>
 		{% endfor %}
 	</div>
+
+	{% include '_inc/pagination.html.twig' with { total_items: totalProducts, items_per_page : productsPerPage, route_name: 'product.index' } %}
 {% endblock %}
 
 

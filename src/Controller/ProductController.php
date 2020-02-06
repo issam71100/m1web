@@ -10,9 +10,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductController extends AbstractController
 {
 	/**
-	 * @Route("/products", name="product.index")
+	 * @Route("/products/{page}", name="product.index")
 	 */
-	public function index(ProductRepository $productRepository):Response
+	public function index(ProductRepository $productRepository, int $page = 1):Response
 	{
 		/*
 		 * doctrine
@@ -30,9 +30,16 @@ class ProductController extends AbstractController
 		 *                  SELECT * FROM WHERE col= ORDER BY OFFSET LIMIT
 		 *              findOneBy : sélection d'un enregistrement avec des conditions
 		 */
-		$results = $productRepository->findAll();
+		//$results = $productRepository->findAll();
+
+		// les paramètres globaux sont créés dans config/services.yaml
+		$productsPerPage = $this->getParameter('products_per_page');
+		$totalProducts = $productRepository->count([]);
+		$results = $productRepository->findBy([], [], $productsPerPage, (--$page * $productsPerPage));
 
 		return $this->render('product/index.html.twig', [
+			'productsPerPage' => $productsPerPage,
+			'totalProducts' => $totalProducts,
 			'results' => $results
 		]);
 	}
