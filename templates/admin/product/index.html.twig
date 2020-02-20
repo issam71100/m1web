@@ -29,8 +29,8 @@
 						<td>{{ product.name }}</td>
 						<td>{{ product.price }}€</td>
 						<td class="text-right">
-							<a href="#" class="btn btn-warning">Modifier</a>
-							<a href="#" class="btn btn-danger">Supprimer</a>
+							<a href="{{ url('admin.product.form.update', { id: product.id }) }}" class="btn btn-warning">Modifier</a>
+							<a href="{{ url('admin.product.delete', { id: product.id }) }}" class="btn btn-danger">Supprimer</a>
 						</td>
 					</tr>
 				{% endfor %}

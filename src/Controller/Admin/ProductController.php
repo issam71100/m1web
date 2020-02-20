@@ -30,12 +30,13 @@ class ProductController extends AbstractController
 
 	/**
 	 * @Route("/products/form", name="admin.product.form")
+	 * @Route("/products/form/update/{id}", name="admin.product.form.update")
 	 */
-	public function form(Request $request, EntityManagerInterface $entityManager):Response
+	public function form(Request $request, EntityManagerInterface $entityManager, int $id = null, ProductRepository $productRepository):Response
 	{
 		// affichage d'un formulaire
 		$type = ProductType::class;
-		$model = new Product();
+		$model = $id ? $productRepository->find($id) : new Product();
 		$form = $this->createForm($type, $model);
 		$form->handleRequest($request);
 
@@ -46,13 +47,14 @@ class ProductController extends AbstractController
 			 * insertion dans une table
 			 * EntityManagerInterface permet d'exécuter UPDATE, DELETE, INSERT
 			 *   méthode persist permet un INSERT
+			 *   lors d'un UPDATE, aucune méthode n'est requise
 			 *   méthode flush permet d'exécuter les requêtes
 			 */
-			$entityManager->persist($model);
+			$id ? null : $entityManager->persist($model);
 			$entityManager->flush();
 
 			// message de confirmation
-			$message = "Le produit a été ajouté";
+			$message = $id ? "Le produit a été modifié" : "Le produit a été ajouté";
 			$this->addFlash('notice', $message);
 
 			// redirection
@@ -62,6 +64,24 @@ class ProductController extends AbstractController
 		return $this->render('admin/product/form.html.twig', [
 			'form' => $form->createView()
 		]);
+	}
+
+	/**
+	 * @Route("/products/delete/{id}", name="admin.product.delete")
+	 */
+	public function delete(ProductRepository $productRepository, EntityManagerInterface $entityManager, int $id):Response
+	{
+		/*
+		 * avec doctrine, pour supprimer une entité, il faut la sélectionner au préalable
+		 * méthode remove pour DELETE
+		 */
+		$entity = $productRepository->find($id);
+		$entityManager->remove($entity);
+		$entityManager->flush();
+
+		// message de confirmation et redirection
+		$this->addFlash('notice', 'Le produit a été supprimé');
+		return $this->redirectToRoute('admin.product.index');
 	}
 }
 
