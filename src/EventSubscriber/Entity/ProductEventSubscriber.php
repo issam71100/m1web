@@ -9,9 +9,11 @@ namespace App\EventSubscriber\Entity;
  */
 
 use App\Entity\Product;
+use App\Service\FileService;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Events;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ProductEventSubscriber implements EventSubscriber
@@ -23,10 +25,12 @@ class ProductEventSubscriber implements EventSubscriber
 	 *      dans le constructeur, lier la propriété et le paramètre
 	 */
 	private $slugger;
+	private $fileService;
 
-	public function __construct(SluggerInterface $slugger)
+	public function __construct(SluggerInterface $slugger, FileService $fileService)
 	{
 		$this->slugger = $slugger;
+		$this->fileService = $fileService;
 	}
 
 	public function prePersist(LifecycleEventArgs $event):void
@@ -34,7 +38,18 @@ class ProductEventSubscriber implements EventSubscriber
 		// par défaut, les souscripteurs doctrine écoutent toutes les entités
 		if($event->getObject() instanceof Product){
 			$product = $event->getObject();
+
+			// création du slug
 			$product->setSlug( $this->slugger->slug($product->getName())->lower() );
+
+			// transfert de l'image
+			if($product->getImage() instanceof UploadedFile){
+				// appel d'un service
+				$this->fileService->upload( $product->getImage(), 'img/product' );
+
+				// récupération du nom aléatoire du fichier généré dans le service
+				$product->setImage( $this->fileService->getFileName() );
+			}
 		}
 	}
 

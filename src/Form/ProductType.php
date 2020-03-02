@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Product;
+use App\EventSubscriber\Form\ProductFormSubscriber;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
@@ -57,6 +58,9 @@ class ProductType extends AbstractType
             ])
             //->add('slug')
         ;
+
+        // ajout d'un soucripteur de formulaire
+	    $builder->addEventSubscriber( new ProductFormSubscriber() );
     }
 
     public function configureOptions(OptionsResolver $resolver)
