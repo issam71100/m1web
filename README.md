@@ -84,6 +84,8 @@
 
 `faker` : <https://github.com/fzaninotto/Faker>
 
+`doctrine extensions` : <https://github.com/beberlei/DoctrineExtensions>
+
 ## Références
 
 Documentation : <https://symfony.com/doc/current/index.html>
@@ -173,3 +175,9 @@ Contraintes de validation sur les champs de formulaire  : <https://symfony.com/d
 	* Gestion des fichiers
 
 	* Souscripteur d'événements de formulaire
+
+* Requêtes personnalisées avec Doctrine
+
+	* Utilisation du Doctrine Query Language
+
+	* Les différents modes de récupération des résultats
