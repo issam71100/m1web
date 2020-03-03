@@ -17,8 +17,13 @@ class CategoryFixtures extends Fixture
 	    for($i = 0; $i < 5; $i++) {
 	    	// instanciation d'une entité
 		    $category = new Category();
+			$category->setName( $faker->unique()->word );
 
-
+			// créer des références : mise en mémoire d'objets réutilisables dans d'autres fixtures
+		    // category0 = Category
+		    // category1 = Category
+		    // category2 = Category
+		    $this->addReference("category$i", $category);
 
 		    // doctrine : méthode persist permet de créer un enregistrement (INSERT INTO)
 		    $manager->persist($category);
