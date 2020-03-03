@@ -22,4 +22,18 @@ class FileService
 	{
 		return $this->fileName;
 	}
+
+	public function delete(string $fileName, string $directory):void
+	{
+		unlink("$directory/$fileName");
+	}
 }
+
+
+
+
+
+
+
+
+

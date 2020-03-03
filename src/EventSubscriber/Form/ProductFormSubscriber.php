@@ -3,8 +3,11 @@
 namespace App\EventSubscriber\Form;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Validator\Constraints\Image;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ProductFormSubscriber implements EventSubscriberInterface
 {
@@ -34,7 +37,20 @@ class ProductFormSubscriber implements EventSubscriberInterface
 		$form = $event->getForm();
 		$model = $form->getData();
 
-		dd($data, $form, $model);
+		// ajout du champ image
+		$form->add('image', FileType::class, [
+			'data_class' => null, // permet d'indiquer qu'aucune classe ne va contenir les propriétés d'une image transférée
+			'constraints' => $data->getId() ? [] : [
+				new NotBlank([
+		             'message' => "L'image est obligatoire"]),
+				new Image([
+			          'mimeTypes' => ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml'],
+			          'mimeTypesMessage' => "L'image n'est pas dans un format Web"
+		        ])
+			]
+		]);
+
+		//dd($data, $form, $model);
 	}
 }
 

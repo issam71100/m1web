@@ -69,8 +69,51 @@ class ProductEventSubscriber implements EventSubscriber
 	{
 		return [
 			Events::prePersist,
-			//Events::postUpdate
+			Events::postLoad,
+			Events::preUpdate,
+			Events::preRemove
 		];
+	}
+
+	public function preRemove(LifecycleEventArgs $args):void
+	{
+		if($args->getObject() instanceof Product) {
+			$product = $args->getObject();
+			// supprimer l'image à partir de la propriété dynamique créée dans l'événement postLoad
+			$this->fileService->delete( $product->prevImage, 'img/product' );
+		}
+	}
+
+	public function preUpdate(LifecycleEventArgs $args):void
+	{
+		if($args->getObject() instanceof Product){
+			$product = $args->getObject();
+			// gestion de l'image
+			// si une nouvelle image a été sélectionnée
+			if($product->getImage() instanceof UploadedFile){
+				// transfert de la nouvelle image
+				$this->fileService->upload($product->getImage(), 'img/product');
+				$product->setImage( $this->fileService->getFileName() );
+
+				// supprimer l'ancienne image à partir de la propriété dynamique créée dans l'événement postLoad
+				$this->fileService->delete( $product->prevImage, 'img/product' );
+			}
+			// si aucune image n'a été sélectionnée
+			else {
+				// récupération de la propriété dynamique créée dans l'événement postLoad
+				$product->setImage( $product->prevImage );
+			}
+		}
+	}
+
+	public function postLoad(LifecycleEventArgs $args):void
+	{
+		if($args->getObject() instanceof Product){
+			// création d'une propriété dynamique permettant de stocker le nom de l'image
+			$product = $args->getObject();
+			$product->prevImage = $product->getImage();
+			//dd($product);
+		}
 	}
 }
 

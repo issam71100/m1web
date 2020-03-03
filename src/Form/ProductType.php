@@ -44,18 +44,7 @@ class ProductType extends AbstractType
 		            ])
 	            ]
             ])
-            ->add('image', FileType::class, [
-            	'data_class' => null, // permet d'indiquer qu'aucune classe ne va contenir les propriétés d'une image transférée
-	            'constraints' => [
-		            new NotBlank([
-                         'message' => "L'image est obligatoire"
-                    ]),
-		            new Image([
-		                'mimeTypes' => ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml'],
-			            'mimeTypesMessage' => "L'image n'est pas dans un format Web"
-		            ])
-	            ]
-            ])
+            // le champ image est créé dans le souscripteur de formulaire
             //->add('slug')
         ;
 
