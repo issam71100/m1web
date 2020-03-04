@@ -79,7 +79,10 @@ class User implements UserInterface
      */
     public function getRoles(): array
     {
-        $roles = $this->roles;
+    	// la propriété roles doit être un array contenant uniquement des chaînes de caractères
+        $roles = array_map(function($role){ return $role->getName(); }, $this->roles->toArray());
+
+        //dd($roles);
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
 

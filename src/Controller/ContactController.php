@@ -20,6 +20,15 @@ class ContactController extends AbstractController
 	public function index(Request $request, MailerInterface $mailer):Response
 	{
 		/*
+		 * récupérer les informations de l'utilisateur : $this->getUser()
+		 * tester le rôle de l'utilisateur : $this->isGranted()
+		 * denyAccessUnlessGranted : accès refusé
+		 */
+
+		 $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+		 /*
+		  *
 		 * affichage d'un formulaire
 		 *   se base
 		 *      - sur l'espace de noms de la classe de formulaire

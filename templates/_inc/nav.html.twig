@@ -20,15 +20,26 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{{ url('product.index') }}">Products</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="{{ url('admin.homepage.index') }}">Administration</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="{{ url('security.login') }}">Connexion</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="{{ url('security.logout') }}">Déconnexion</a>
-			</li>
+			{#
+				récupérer les informations de l'utilisateur : app.user
+				tester le rôle de l'utilisateur : is_granted
+					- IS_AUTHENTICATED_FULLY : utilisateur connecté quelque soit son rôle
+					- IS_AUTHENTICATED_ANONYMOUSLY : utilisateur connecté en tant qu'anonyme
+			#}
+			{% if is_granted('ROLE_ADMIN') %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url('admin.homepage.index') }}">Administration</a>
+				</li>
+			{% endif %}
+			{% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url('security.login') }}">Connexion</a>
+				</li>
+			{% else %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url('security.logout') }}">Déconnexion</a>
+				</li>
+			{% endif %}
 			<li class="nav-item">
 				<a class="nav-link" href="{{ url('registration.register') }}">Inscription</a>
 			</li>
