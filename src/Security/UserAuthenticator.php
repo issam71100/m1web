@@ -39,7 +39,8 @@ class UserAuthenticator extends AbstractFormLoginAuthenticator implements Passwo
 
     public function supports(Request $request)
     {
-        return 'app_login' === $request->attributes->get('_route')
+    	// utiliser le nom de la route de connexion spécifiée dans SecurityController
+        return 'security.login' === $request->attributes->get('_route')
             && $request->isMethod('POST');
     }
 
@@ -88,18 +89,21 @@ class UserAuthenticator extends AbstractFormLoginAuthenticator implements Passwo
         return $credentials['password'];
     }
 
+    // méthode appelée après une authentification réussie
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
         }
 
-        // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        // indiquer la route d'atterissage après une authentification réussie
+        return new RedirectResponse($this->urlGenerator->generate('homepage.index'));
+        //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
     protected function getLoginUrl()
     {
-        return $this->urlGenerator->generate('app_login');
+	    // utiliser le nom de la route de connexion spécifiée dans SecurityController
+        return $this->urlGenerator->generate('security.login');
     }
 }
