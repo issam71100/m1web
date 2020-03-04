@@ -4,6 +4,7 @@
 // App provient de composer.json
 namespace App\Controller;
 
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,8 +23,23 @@ class HomepageController extends AbstractController
 	/**
 	 * @Route("/", name="homepage.index")
 	 */
-	public function index(Request $request):Response
+	public function index(Request $request, ProductRepository $productRepository):Response
 	{
+		/*
+		 * test de requêtes personnalisées
+		 *   les requêtes personnalisées de sélection sont à stocker dans les repository
+		 *
+		 * méthodes de récupération des résultats
+		 *      getResult : renvoie un array d'entités
+		 *      getArrayResult : renvoie un array d'arrays
+		 *      getSingleScalarResult : renvoie un résultat scalaire (non complexe)
+		 *      getScalarResult : renvoie un array de résultats scalaires
+		 *      getOneOrNullResult : renvoie un résultat ou null
+		 *      getSingleResult : renvoie un résultat
+		 */
+		// appel de la méthode test de ProductRepository
+		//dd($productRepository->test()->getResult());
+
 		/*
 		 * débogage avec le composant debug
 		 *  dump : affichage dans la barre de débogage

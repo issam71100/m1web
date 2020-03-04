@@ -19,6 +19,7 @@
 					<th>Image</th>
 					<th>Nom</th>
 					<th>Prix</th>
+					<th>Catégorie</th>
 					<th></th>
 				</tr>
 				{% for product in results %}
@@ -28,6 +29,7 @@
 						</td>
 						<td>{{ product.name }}</td>
 						<td>{{ product.price }}€</td>
+						<td>{{ product.category.name}}</td>
 						<td class="text-right">
 							<a href="{{ url('admin.product.form.update', { id: product.id }) }}" class="btn btn-warning">Modifier</a>
 							<a href="{{ url('admin.product.delete', { id: product.id }) }}" class="btn btn-danger">Supprimer</a>

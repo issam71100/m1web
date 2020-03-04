@@ -52,6 +52,14 @@
 
 `symfony console doctrine:fixtures:load` : charger les données fictives
 
+### Commandes liées à la sécurité
+
+`symfony console make:user` : créer une entité de comptes utilisateurs
+
+`symfony console make:auth` : créer un authentificateur de comptes utilisateurs
+
+`symfony console make:registration-form` : créer un formulaire de création de comptes utilisateur
+
 ## Principaux composants
 
 `composer require <COMPOSANT>` : installer un composant ou une dépendance
@@ -79,6 +87,8 @@
 `ormfixtures` : créer des données fictives pour Doctrine
 
 `string` : gérer les chaînes de caractères
+
+`security` : authentification et autorisations
 
 ## Bibliothèques externes
 
@@ -181,3 +191,11 @@ Contraintes de validation sur les champs de formulaire  : <https://symfony.com/d
 	* Utilisation du Doctrine Query Language
 
 	* Les différents modes de récupération des résultats
+
+* Sécurité
+
+	* Gestion de l'authentification
+
+	* Gestion des autorisations
+
+	* Gestion des rôles
