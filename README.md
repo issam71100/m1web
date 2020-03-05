@@ -1,5 +1,19 @@
 # m1web
 
+---
+
+## Rappel
+
+Une évaluation est **STRICTEMENT** personnelle, elle ne peut pas être faite en groupe.
+
+À la fin de l’évaluation, envoyez un email à l'adresse - lkhouri92@gmail.com - spécifiant le **lien vers le dépôt Git** contenant votre évaluation.
+
+---
+
+## Évaluation
+
+Le sujet de l'évaluation est disponible dans le fichier [EVALUATION.md](EVALUATION.md)
+
 ## Principales commandes
 
 ### Commandes générales
